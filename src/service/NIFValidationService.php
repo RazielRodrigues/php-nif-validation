@@ -51,7 +51,7 @@ class NIFValidationService implements NIFValidationServiceInterface
      */
     public function validate(): bool
     {
-        if (strlen($this->nif) < 9) {
+        if (strlen($this->nif) < 9 || !is_numeric($this->nif)) {
             return false;
         }
 
